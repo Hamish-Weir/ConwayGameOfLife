@@ -1,4 +1,4 @@
-package ConwayGameOfLife;
+package PleaseWork;
 
 public class Cell {
     private int state = 0;
@@ -6,7 +6,7 @@ public class Cell {
 
     Cell()
     {
-
+        
     }
 
     public int getState()
