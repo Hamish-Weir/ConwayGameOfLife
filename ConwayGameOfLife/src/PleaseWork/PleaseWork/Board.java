@@ -31,6 +31,36 @@ public class Board {
         board[x][y].setState(state);
     }
 
+    public void updateBoard()
+    {
+        for(int i= 0 ; i < boardWidth;i++)
+        {
+            for(int j= 0 ; j < boardWidth;j++)
+            {
+
+            }
+        }
+    }
+
+    public boolean getNextState(int x, int y)
+    {
+        int neighbours = getNeighbours(x, y);
+        int state = getCell(x, y).getState();
+
+        if(state == 1)
+        {
+            if (neighbours < 2){return false;}
+            if (neighbours >= 2 && neighbours <=3){return true;}
+            else {return false;}
+        }
+        else
+        {
+            if (neighbours == 3){return true;}
+            else {return false;}
+        }
+    } 
+
+
     public int getNeighbours(int x, int y)
     {
         //TO UPDATE GAME, CHANGE THIS STATEMENT
@@ -68,6 +98,8 @@ public class Board {
         B.setCell(2,2, 1);
 
         System.out.println(B.getNeighbours(1,1));
+
+        System.out.print(B.getNextState(0,0));
 
     }
 }
